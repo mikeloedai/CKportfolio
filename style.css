@@ -42,7 +42,7 @@ html {
 }
 
 body {
-    
+    padding: 0;
     background: var(--bg-color);
     color: var(--text-color);
     overflow-x: hidden;
@@ -122,7 +122,7 @@ header.sticky {
 }
 
 section {
-    padding: 10rem 9% 2rem;
+    padding: 10rem 10rem;
     max-width: 1311px;
 }
 
@@ -148,7 +148,7 @@ section {
     display: flex;
     flex-direction: row-reverse;
     justify-content: center;
-    padding: 0 9%;
+    padding: 0 0rem;
     align-items: center;
 }
 
@@ -166,14 +166,12 @@ section {
 .home-content {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
     max-width: 60rem;
     margin: 15rem 0;
 }
 
 .home-content h2{
-    font-size: 1.3rem;
+    font-size: 1.7rem;
     font-weight: 500;
 }
 
@@ -182,7 +180,6 @@ section {
     font-size: 5rem;
     font-weight: 600;
     line-height: 1.3;
-    margin: auto;
 }
 
 
@@ -656,16 +653,17 @@ ul li i:after {
     width: 100%;
     height: 100%;
     min-height: fit-content;
+    margin-top: 2rem;
 }
 
 .intro-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
+    gap: 3rem;
     max-width: 70rem;
     width: 100%;
-    padding: 4rem;
+    padding: 0rem auto 2rem auto;
     border-radius: 2rem;
     text-align: center;
 }
@@ -1109,9 +1107,6 @@ textarea {
         flex-direction: column;
     }
 
-    .home-content h1{
-        margin: 1rem auto 0.5rem auto;
-    }
 
     .home-content p {
         max-width: 33rem;
