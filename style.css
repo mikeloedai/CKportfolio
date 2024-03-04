@@ -44,7 +44,7 @@ html {
 
 .gradient2{
     position: absolute;
-    width: 100%;
+    width: 40%;
     top: 70rem;
     opacity: .2;
     z-index: -100;
@@ -1072,6 +1072,19 @@ textarea {
         z-index: 999;
     }
     
+    .gradient1{
+        width: 90%;
+    }
+
+    .gradient2{
+        width: 90%;
+        top: 100vh;
+    }
+
+    .gradient3, .gradient4, .gradient6{
+        width: 90%;
+    }
+
     .navbar {
         position: absolute;
         top: 100%;
