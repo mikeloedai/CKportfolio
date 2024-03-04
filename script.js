@@ -60,6 +60,8 @@ var swiper = new Swiper(".mySwiper", {
 });
 
 
+// This is for the cascading drop down components
+
 let filter_btn = document.querySelectorAll('.filter-btn');
 let tab_items = document.querySelectorAll('.tab-item');
 
@@ -85,7 +87,7 @@ for (let i = 0; i < filter_btn.length; i++) {
 (function () {
   "use strict";
   /*
-   * Form Validation
+   * Backend based web forwarding tool to relay input form validation to designated email address
    */
 
   // Fetch all the forms we want to apply custom validation styles to
@@ -158,4 +160,24 @@ for (let i = 0; i < filter_btn.length; i++) {
 })();
 const button = document.getElementById("send");
 
+// Scroll animations based on javascript
 
+let parent =  document.querySelectorAll('section');
+
+window.onscroll = () => {
+  parent.forEach(sec => {
+    let top = window.scrollY;
+    let offset = sec.offsetTop - 200;
+    let height = sec.offsetHeight;
+
+    if(top >= offset && top < offset + height){
+      sec.classList.add('show-animate');
+    }
+
+    // This is implemented in case you would want repeating scroll animations. 
+
+    else{
+      sec.classList.remove('show-animate');
+    }
+  })
+}
