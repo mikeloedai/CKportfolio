@@ -358,13 +358,6 @@ section .animate{
     min-height: auto;
 }
 
-.about-back {
-    top: 80vh;
-    position: absolute;
-    width: 100%;
-    opacity: .5;
-}
-
 
 .about-img {
     position: relative;
