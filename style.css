@@ -45,7 +45,7 @@ html {
 .gradient2{
     position: absolute;
     width: 100%;
-    top: 100vh;
+    top: 70rem;
     opacity: .2;
     z-index: -100;
 }
@@ -53,7 +53,7 @@ html {
 .gradient3{
     position: absolute;
     width: 60%;
-    top: 300vh;
+    top: 250vh;
     right: 0;
     opacity: .2;
     z-index: -100;
@@ -64,15 +64,6 @@ html {
     width: 60%;
     top: 500vh;
     left: 0;
-    opacity: .1;
-    z-index: -100;
-}
-
-.gradient5{
-    position: absolute;
-    width: 60%;
-    top: 630vh;
-    right: 0;
     opacity: .1;
     z-index: -100;
 }
