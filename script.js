@@ -18,6 +18,7 @@ window.onscroll = () => {
     sections.forEach(sec => {
         let top = window.scrollY;
         let offset = sec.offsetTop - 100;
+        let offset1 = sec.offsetTop - 250;
         let height = sec.offsetHeight;
         let id = sec.getAttribute('id');
 
@@ -33,6 +34,15 @@ window.onscroll = () => {
             sec.classList.remove('show-animate');
         }
 
+        if(top >= offset1 && top < offset1 + height){
+          sec.classList.add('show-animate');
+        }
+    
+        // This is implemented in case you would want repeating scroll animations 
+    
+        else{
+          sec.classList.remove('show-animate');
+        }
     });
     let header = document.querySelector('header');
 
@@ -60,29 +70,6 @@ var swiper = new Swiper(".mySwiper", {
 });
 
 
-// This is for the cascading drop down components
-
-let filter_btn = document.querySelectorAll('.filter-btn');
-let tab_items = document.querySelectorAll('.tab-item');
-
-for (let i = 0; i < filter_btn.length; i++) {
-  filter_btn[i].addEventListener('click', function () {
-    for (let j = 0; j < filter_btn.length; j++) {
-      filter_btn[j].classList.remove('active');
-    }
-    let select_tab = filter_btn[i].getAttribute('data-tab');
-    filter_btn[i].classList.add('active');
-    for (let t = 0; t < tab_items.length; t++) {
-      document.querySelector('.tab-filter-item-container').style.height =
-        tab_items[t].scrollHeight + 'px';
-      if (tab_items[t].classList.contains(select_tab)) {
-        tab_items[t].classList.add('select_tab');
-      } else {
-        tab_items[t].classList.remove('select_tab');
-      }
-    }
-  });
-}
 
 (function () {
   "use strict";
@@ -160,24 +147,4 @@ for (let i = 0; i < filter_btn.length; i++) {
 })();
 const button = document.getElementById("send");
 
-// Scroll animations based on javascript
 
-let parent =  document.querySelectorAll('section');
-
-window.onscroll = () => {
-  parent.forEach(sec => {
-    let top = window.scrollY;
-    let offset = sec.offsetTop - 200;
-    let height = sec.offsetHeight;
-
-    if(top >= offset && top < offset + height){
-      sec.classList.add('show-animate');
-    }
-
-    // This is implemented in case you would want repeating scroll animations. 
-
-    else{
-      sec.classList.remove('show-animate');
-    }
-  })
-}
