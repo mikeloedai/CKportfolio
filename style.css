@@ -158,10 +158,12 @@ section {
 
 .hidden{
     opacity: 0;
+    transform: translateY(-50px);
     transition: 1s;
 }
 
 .show{
+    transform: translateY(0);
     opacity: 1;
 }
 
