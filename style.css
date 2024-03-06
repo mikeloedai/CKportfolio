@@ -155,8 +155,14 @@ section {
     padding: 10rem 10rem;
     max-width: 1311px;
 }
-section .animate{
-    transition: 1s;
+
+.hidden{
+    opacity: 0;
+    transition: 1.5s;
+}
+
+.show{
+    opacity: 1;
 }
 
 .background {
@@ -176,24 +182,7 @@ section .animate{
     display: none;
 }
 
-.home img.animate{
-    transform: translateX(30vh);
-    opacity: 0;
-}
 
-.home.show-animate img.animate{
-    transform: translateX(0);
-    opacity: 1;
-}
-.home .home-content.animate{
-    transform: translateX(-30vh);
-    opacity: 0;
-}
-
-.home.home.show-animate .home-content.animate{
-    transform: translateX(0);
-    opacity: 1;
-}
 
 .home {
     display: flex;
@@ -340,16 +329,6 @@ section .animate{
     margin: 1rem auto;
 }
 
-
-
-.about .animate{
-    opacity: 0;
-}
-
-.about.show-animate .animate{
-    opacity: 1;
-}
-
 .about {
     display: flex;
     flex-direction: column;
@@ -435,13 +414,6 @@ section .animate{
     background: var(--second-bg-color);
 }
 
-.education .animate{
-    opacity: 0;
-}
-
-.education.show-animate .animate{
-    opacity: 1;
-}
 
 .education {
     display: flex;
@@ -515,14 +487,6 @@ section .animate{
     color: gainsboro;
 }
 
-
-.experience .animate{
-    opacity: 0;
-}
-
-.experience.show-animate .animate{
-    opacity: 1;
-}
 .experience {
     display: flex;
     align-items: center;
@@ -694,14 +658,6 @@ ul li i:after {
     transform: translate(-2px, 0) rotate(-45deg);
 }
 
-.services .animate{
-    opacity: 0;
-}
-
-.services.show-animate .animate{
-    opacity: 1;
-}
-
 .services {
     display: flex;
     flex-direction: column;
@@ -815,14 +771,6 @@ ul li i:after {
     font-size: 3rem;
 }
 
-.testimonials .animate{
-    opacity: 0;
-}
-
-.testimonials.show-animate .animate{
-    opacity: 1;
-}
-
 
 .testimonials {
     display: flex;
@@ -903,13 +851,6 @@ ul li i:after {
 .is-invalid,
 .was-validated :invalid {
     border-color: #dc3545;
-}
-
-.contact .animate{
-    opacity: 0;
-}
-.contact.show-animate .animate{
-    opacity: 1;
 }
 
 .contact {

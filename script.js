@@ -9,7 +9,6 @@ menuIcon.onclick = () => {
 }
 
 //scroll sections
-
 let sections = document.querySelectorAll('section');
 let navLinks = document.querySelectorAll('header nav a');
 
@@ -18,30 +17,13 @@ window.onscroll = () => {
     sections.forEach(sec => {
         let top = window.scrollY;
         let offset = sec.offsetTop - 100;
-        let offset1 = sec.offsetTop - 250;
         let height = sec.offsetHeight;
         let id = sec.getAttribute('id');
-
         if (top >= offset && top < offset + height) {
             navLinks.forEach(links => {
                 links.classList.remove('active');
                 document.querySelector('header nav a[href*=' + id + ']').classList.add('active');
             });
-            //Active secitons for animation on scroll
-            sec.classList.add('show-animate');
-        }
-        else {
-            sec.classList.remove('show-animate');
-        }
-
-        if(top >= offset1 && top < offset1 + height){
-          sec.classList.add('show-animate');
-        }
-    
-        // This is implemented in case you would want repeating scroll animations 
-    
-        else{
-          sec.classList.remove('show-animate');
         }
     });
     let header = document.querySelector('header');
@@ -148,3 +130,18 @@ var swiper = new Swiper(".mySwiper", {
 const button = document.getElementById("send");
 
 
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    console.log(entry)
+    if(entry.isIntersecting) {
+      entry.target.classList.add('show');
+    } else {
+      entry.target.classList.remove('show');
+    }
+  })
+});
+
+
+const hiddenElements = document.querySelectorAll('.hidden');
+
+hiddenElements.forEach((el) => observer.observe(el));
