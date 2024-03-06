@@ -158,7 +158,7 @@ section {
 
 .hidden{
     opacity: 0;
-    transition: 1.5s;
+    transition: 1s;
 }
 
 .show{
