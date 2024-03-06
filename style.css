@@ -155,7 +155,24 @@ section {
     padding: 10rem 10rem;
     max-width: 1311px;
 }
-
+.heroLeft{
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: 1s;
+}
+.showHeroLeft{
+    opacity: 1;
+    transform: translateX(0);
+}
+.heroRight{
+    opacity: 0;
+    transform: translateX(50px);
+    transition: 1s;
+}
+.showHeroright{
+    opacity: 1;
+    transform: translateX(0);
+}
 .hidden{
     opacity: 0;
     transform: translateY(-50px);

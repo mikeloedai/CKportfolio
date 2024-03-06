@@ -138,10 +138,22 @@ const observer = new IntersectionObserver((entries) => {
     } else {
       entry.target.classList.remove('show');
     }
+    if(entry.isIntersecting) {
+      entry.target.classList.add('showHeroLeft');
+    } else {
+      entry.target.classList.remove('showHeroLeft');
+    }
+    if(entry.isIntersecting) {
+      entry.target.classList.add('showHeroRight');
+    } else {
+      entry.target.classList.remove('showHeroRight');
+    }
   })
 });
 
-
+const heroLeft = document.querySelectorAll('.heroLeft');
+heroLeft.forEach((el) => observer.observe(el));
+const heroRight = document.querySelectorAll('.heroRight');
+heroRight.forEach((el) => observer.observe(el));
 const hiddenElements = document.querySelectorAll('.hidden');
-
 hiddenElements.forEach((el) => observer.observe(el));
