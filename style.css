@@ -11,6 +11,10 @@
     font-family: 'Poppins';
 }
 
+.traim{
+    font-size: 60px;
+}
+
 *::before,
 *::after {
     padding: 0;
@@ -31,6 +35,13 @@
 html {
     font-size: 62.5%;
     overflow-x: hidden;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    margin: 0;
+    padding: 0;
 }
 
 .gradient1{
@@ -62,7 +73,7 @@ html {
 .gradient4{
     position: absolute;
     width: 60%;
-    top: 500vh;
+    top: 200vh;
     left: 0;
     opacity: .1;
     z-index: -100;
@@ -71,6 +82,7 @@ html {
 .gradient6{
     position: absolute;
     width: 40%;
+    max-width: 400px;
     bottom: 0;
     left: 0;
     opacity: .2;
@@ -81,7 +93,7 @@ body {
     padding: 0;
     background: var(--bg-color);
     color: var(--text-color);
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 
@@ -97,22 +109,36 @@ span {
 }
 
 
-header {
+.header {
     position: fixed;
     top: 0;
-    left: 0;
     width: 100%;
-    padding: 2rem 9%;
     background: transparent;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     z-index: 100;
     transition: .5s;
 }
 
-header.sticky {
+.header.sticky {
     background: var(--bg-color);
+}
+
+.hide-header {
+    transform: translateY(-100%);
+    transition: transform 0.3s ease; 
+}
+
+.header-container{
+    margin: 2rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1366px;
+    overflow: hidden;
+    padding: .5rem 4% .5rem;
 }
 
 .logo {
@@ -152,14 +178,17 @@ header.sticky {
 }
 
 section {
-    padding: 10rem 10rem;
-    max-width: 1311px;
+    max-width: 1366px;
+    overflow: hidden;
+    padding: 10rem 4% 2rem;
 }
+
 .heroLeft{
     opacity: 0;
     transform: translateX(-50px);
     transition: 1s;
 }
+
 .showHeroLeft{
     opacity: 1;
     transform: translateX(0);
@@ -206,9 +235,10 @@ section {
 .home {
     display: flex;
     flex-direction: row-reverse;
-    justify-content: center;
-    padding: 0 0rem;
+    justify-content: space-evenly;
     align-items: center;
+    height: 100vh;
+    width: 100%;
 }
 
 .chat {
@@ -354,6 +384,8 @@ section {
     justify-content: flex-start;
     align-items: center;
     min-height: auto;
+    width: 100%;
+    margin-bottom: 6rem;
 }
 
 
@@ -441,20 +473,16 @@ section {
     flex-direction: column;
     min-height: auto;
     padding-bottom: 5rem;
+    width: 100%;
 }
-
-.education-back {
-    position: absolute;
-    width: 30rem;
-    top: 170vh;
-    left: 0;
-}
-
-
 
 .education .heading {
     position: relative;
     display: inline-block;
+}
+
+.education-box{
+    width: 100%;
 }
 
 .education-content .content {
@@ -680,9 +708,8 @@ ul li i:after {
 .services {
     display: flex;
     flex-direction: column;
+    width: 100%;
 }
-
-
 
 .services-container {
     display: flex;
@@ -733,7 +760,7 @@ ul li i:after {
     width: 100%;
     height: 100%;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     gap: 3rem;
     display: flex;
     background: rgba(255, 255, 255, 0.1);
@@ -877,6 +904,7 @@ ul li i:after {
     padding-bottom: 7rem;
     display: flex;
     flex-direction: column;
+    width: 100%;
 }
 
 .contact form {
@@ -950,6 +978,7 @@ textarea {
 }
 
 .footer {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -1007,9 +1036,25 @@ textarea {
     color: var(--main-color);
 }
 
-@media (max-width: 1200px) {
-    
+@media (min-width: 1366px) {
+    body{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .header{
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+    .header-content{
+        justify-content: space-evenly;
+    }
+    section, .services {
+        
+    }
+}
 
+@media (max-width: 1200px) {
     .hero-face {
         right: 3rem;
     }
@@ -1028,10 +1073,6 @@ textarea {
 
     .navbar a {
         font-size: 1.4rem;
-    }
-
-    section {
-        padding: 10rem 4% 2rem;
     }
 
     .home {

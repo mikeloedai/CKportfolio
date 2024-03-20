@@ -12,8 +12,10 @@ menuIcon.onclick = () => {
 let sections = document.querySelectorAll('section');
 let navLinks = document.querySelectorAll('header nav a');
 
-
+const header = document.querySelector('header');
+const footer = document.querySelector('footer');
 window.onscroll = () => {
+  console.log("Scroll handler called");
     sections.forEach(sec => {
         let top = window.scrollY;
         let offset = sec.offsetTop - 100;
@@ -22,16 +24,15 @@ window.onscroll = () => {
         if (top >= offset && top < offset + height) {
             navLinks.forEach(links => {
                 links.classList.remove('active');
-                document.querySelector('header nav a[href*=' + id + ']').classList.add('active');
+                document.querySelector('nav a[href*=' + id + ']').classList.add('active');
             });
         }
     });
-    let header = document.querySelector('header');
 
-    header.classList.toggle('sticky', window.scrollY > 100);
-
+    let scrollPos = window.scrollY;
+    header.classList.toggle('sticky', scrollPos > 100);
     menuIcon.classList.remove('bx-x');
-    navbar.classList.remove('active')
+    navbar.classList.remove('active');
 }
 
 var swiper = new Swiper(".mySwiper", {
@@ -157,3 +158,19 @@ const heroRight = document.querySelectorAll('.heroRight');
 heroRight.forEach((el) => observer.observe(el));
 const hiddenElements = document.querySelectorAll('.hidden');
 hiddenElements.forEach((el) => observer.observe(el));
+
+// Create intersection observer
+const observer1 = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting) {
+      // Element A is in view, show element B
+      header.classList.add('hide-header');
+    } else {
+      // Element A is not in view, hide element B
+      header.classList.remove('hide-header');
+    }
+  });
+});
+
+// Observe element A
+observer1.observe(footer);
