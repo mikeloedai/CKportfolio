@@ -1216,6 +1216,9 @@ textarea {
         bottom: 2rem;
 
     }
+    .home-content .social-media a i{
+        font-size: 3.5rem;
+    }
     .education-content .content {
         flex-direction: column;
         padding: 2rem;
